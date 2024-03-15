@@ -17,13 +17,19 @@ class CreateUser extends CreateRecord
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->label(__('name'))
+                Forms\Components\TextInput::make('username')
+                    ->label(__('username'))
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone')
                     ->label(__('phone'))
                     ->required()
+                    ->unique(User::class, 'phone')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->label(__('email'))
+                    ->required()
+                    ->unique(User::class, 'email')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('password')
                     ->label(__('password'))

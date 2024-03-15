@@ -18,14 +18,19 @@ class EditUser extends EditRecord
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->label(__('name'))
+                Forms\Components\TextInput::make('username')
+                    ->label(__('username'))
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone')
                     ->label(__('phone'))
                     ->required()
                     ->unique(User::class, 'phone', ignoreRecord: true)
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->label(__('email'))
+                    ->required()
+                    ->unique(User::class, 'email', ignoreRecord: true)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('password')
                     ->label(__('password'))

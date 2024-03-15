@@ -24,13 +24,16 @@ class AdminResource extends Resource
             ->defaultSort('created_at', 'desc')
             ->columns([
                 Tables\Columns\TextColumn::make('id')
-                    ->sortable()
-                    ->label('ID'),
+                    ->label(__('id'))
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->label(__('name'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
+                    ->label(__('email'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('created_at'))
                     ->date('d/m/Y H:i')
                     ->sortable(),
             ])

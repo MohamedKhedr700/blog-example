@@ -24,13 +24,19 @@ class UserResource extends Resource
             ->defaultSort('created_at', 'desc')
             ->columns([
                 Tables\Columns\TextColumn::make('id')
-                    ->sortable()
-                    ->label('ID'),
-                Tables\Columns\TextColumn::make('name')
+                    ->label(__('id'))
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('username')
+                    ->label(__('username'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('phone')
+                    ->label(__('phone'))
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->label(__('email'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(__('created_at'))
                     ->date('d/m/Y H:i')
                     ->sortable(),
             ])
