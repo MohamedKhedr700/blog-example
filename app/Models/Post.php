@@ -30,14 +30,6 @@ class Post extends Model
     }
 
     /**
-     * Set user id.
-     */
-    public function setUser(int $userId): void
-    {
-        $this->user_id = $userId;
-    }
-
-    /**
      * Get a user that belongs to a post.
      */
     public function user(): BelongsTo
