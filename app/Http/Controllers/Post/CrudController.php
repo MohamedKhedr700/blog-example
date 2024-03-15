@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Post;
 
 use App\Actions\Post\CreateAction;
 use App\Actions\Post\ListAction;
-use App\Actions\User\RegisterAction;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreRequest;
-use App\Http\Requests\User\RegisterRequest;
 use Illuminate\Http\JsonResponse;
 
-class PostController extends Controller
+class CrudController extends Controller
 {
     /**
      * Creat a post.

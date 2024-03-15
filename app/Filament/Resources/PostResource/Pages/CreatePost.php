@@ -2,12 +2,10 @@
 
 namespace App\Filament\Resources\PostResource\Pages;
 
-use App\Models\Admin;
-use Filament\Forms;
 use App\Filament\Resources\PostResource;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Pages\CreateRecord;
-use Illuminate\Validation\Rules\Password;
 
 class CreatePost extends CreateRecord
 {

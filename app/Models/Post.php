@@ -34,7 +34,7 @@ class Post extends Model
      */
     public function setUser(int $userId): void
     {
-        $this->userId = $userId;
+        $this->user_id = $userId;
     }
 
     /**

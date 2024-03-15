@@ -3,12 +3,11 @@
 namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\UserResource;
-use App\Models\Admin;
 use App\Models\User;
 use Filament\Actions;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Pages\EditRecord;
-use Filament\Forms;
 
 class EditUser extends EditRecord
 {

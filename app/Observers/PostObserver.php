@@ -8,16 +8,14 @@ use Illuminate\Support\Facades\Auth;
 class PostObserver
 {
     /**
-     * Handle the Post "created" event.
+     * Handle the post "creating" event.
      */
-    public function created(Post $post): void
+    public function creating(Post $post): void
     {
-        if (! Auth::guard('user')) {
+        if (! Auth::guard('user')->check()) {
             return;
         }
 
-        $post->setUser(auth()->id());
-
-//        $post->save();
+        $post->setAttribute('user_id', auth()->id());
     }
 }

@@ -3,11 +3,10 @@
 namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\UserResource;
-use App\Models\Admin;
 use App\Models\User;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Pages\CreateRecord;
-use Filament\Forms;
 
 class CreateUser extends CreateRecord
 {

@@ -2,7 +2,6 @@
 
 namespace App\Actions\User;
 
-use Exception;
 use Illuminate\Auth\AuthenticationException;
 
 class LoginAction

@@ -4,9 +4,9 @@ namespace App\Filament\Resources\AdminResource\Pages;
 
 use App\Filament\Resources\AdminResource;
 use App\Models\Admin;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Pages\CreateRecord;
-use Filament\Forms;
 
 class CreateAdmin extends CreateRecord
 {

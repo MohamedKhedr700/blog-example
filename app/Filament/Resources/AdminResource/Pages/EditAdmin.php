@@ -5,9 +5,9 @@ namespace App\Filament\Resources\AdminResource\Pages;
 use App\Filament\Resources\AdminResource;
 use App\Models\Admin;
 use Filament\Actions;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Pages\EditRecord;
-use Filament\Forms;
 
 class EditAdmin extends EditRecord
 {

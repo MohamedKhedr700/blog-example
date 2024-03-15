@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Post;
+use App\Http\Controllers\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/v1/posts')
     ->middleware(['auth:user'])
     ->group(function () {
-        Route::post('/', [PostController::class, 'store']);
-        Route::get('/', [PostController::class, 'index']);
+        Route::post('/', [Post\CrudController::class, 'store']);
+        Route::get('/', [Post\CrudController::class, 'index']);
     });
 
 // user routes
 Route::prefix('/v1/users')
     ->group(function () {
-        Route::post('/register', [UserController::class, 'register']);
-        Route::post('/verify', [UserController::class, 'verify']);
-        Route::post('/login', [UserController::class, 'login']);
-        Route::get('/profile', [UserController::class, 'profile']);
+        Route::post('/register', User\RegisterController::class);
+        Route::post('/verify', User\VerificationController::class);
+        Route::post('/login', User\LoginController::class);
+        Route::get('/profile', User\ProfileController::class)->middleware(['auth:user']);
     });

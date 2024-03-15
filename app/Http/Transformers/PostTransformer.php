@@ -2,7 +2,6 @@
 
 namespace App\Http\Transformers;
 
-use App\Models\Admin;
 use App\Models\Post;
 use League\Fractal\Resource\Primitive;
 use League\Fractal\TransformerAbstract;
