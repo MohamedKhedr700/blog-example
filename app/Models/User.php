@@ -43,7 +43,9 @@ class User extends Authenticatable implements JWTSubject
      * The attributes that should be cast.
      */
     protected $casts = [
+        'created_at' => 'datetime:Y-m-d h:i:s a',
         'password' => 'hashed',
+
     ];
 
     /**

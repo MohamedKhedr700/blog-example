@@ -6,7 +6,6 @@ use App\Services\Contracts\SmsProvider;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
-use Twilio\Exceptions\ConfigurationException;
 use Twilio\Rest\Client;
 
 class TwilioProvider implements SmsProvider
@@ -30,15 +29,15 @@ class TwilioProvider implements SmsProvider
     public function send(string $phone, string $message): void
     {
         try {
-//            $client = new Client(
-//                $this->settings('sid'),
-//                $this->settings('token'),
-//            );
-//
-//            $client->messages->create($phone, [
-//                'from' => $this->settings('from'),
-//                'body' => $message,
-//            ]);
+            //            $client = new Client(
+            //                $this->settings('sid'),
+            //                $this->settings('token'),
+            //            );
+            //
+            //            $client->messages->create($phone, [
+            //                'from' => $this->settings('from'),
+            //                'body' => $message,
+            //            ]);
 
         } catch (Exception $e) {
             Log::info($e->getMessage());

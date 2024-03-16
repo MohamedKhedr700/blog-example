@@ -14,9 +14,8 @@ class ProfileController extends Controller
      */
     public function __invoke(ProfileAction $action): JsonResponse
     {
-        return response()->json([
-            'message' => __('message.success'),
-            'user' => fractal_data($action->execute(), new UserTransformer),
-        ]);
+        return $this->resource(
+            fractal_data($action->execute(), new UserTransformer),
+        );
     }
 }

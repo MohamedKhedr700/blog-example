@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Actions\Post\CreateAction;
 use App\Actions\Post\ListAction;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\ListRequest;
 use App\Http\Requests\Post\StoreRequest;
 use App\Http\Transformers\Post\PostTransformer;
 use Illuminate\Http\JsonResponse;
@@ -18,24 +19,22 @@ class CrudController extends Controller
     {
         $action->execute($request->validated());
 
-        return response()->json([
-            'message' => __('message.success'),
-        ]);
+        return $this->message(__('message.success'));
     }
 
     /**
      * Creat a post.
      */
-    public function index(ListAction $action): JsonResponse
+    public function index(ListRequest $request, ListAction $action): JsonResponse
     {
         $posts = $action->execute(
+            $request->validated(),
             ['*'],
             ['user:id,username'],
         );
 
-        return response()->json([
-            'message' => __('message.success'),
-            'resources' => fractal_data($posts, new PostTransformer),
-        ]);
+        return $this->resources(
+            fractal_data($posts, new PostTransformer),
+        );
     }
 }

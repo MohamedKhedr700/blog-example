@@ -2,15 +2,15 @@
 
 namespace App\Jobs;
 
-use App\Models\Verification;
-use App\Services\SmsService;
+use App\Mail\ReportMail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Mail;
 
-class SendVerification implements ShouldQueue
+class GenerateReportJob implements ShouldQueue
 {
     use Dispatchable;
     use InteractsWithQueue;
@@ -21,9 +21,11 @@ class SendVerification implements ShouldQueue
      * Create a new job instance.
      */
     public function __construct(
-        private readonly Verification $verification,
+        private readonly array $admins,
+        private readonly array $users,
+        private readonly array $posts,
     ) {
-
+        //
     }
 
     /**
@@ -31,12 +33,10 @@ class SendVerification implements ShouldQueue
      */
     public function handle(): void
     {
-        SmsService::new()->send(
-            $this->verification->verifiable()
-                ->select('phone')
-                ->first()
-                ->getAttribute('phone'),
-            $this->verification->getMessage(),
-        );
+        if (empty($this->users) && empty($this->posts)) {
+            return;
+        }
+
+        Mail::to($this->admins)->send(new ReportMail($this->users, $this->posts));
     }
 }

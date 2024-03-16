@@ -44,7 +44,7 @@ class VerificationRequest extends FormRequest
         $verification = Verification\FindByAction::exec([
             'code' => $this->input('code'),
             'phone' => $this->input('phone'),
-            'fromCreatedAt' => now()->subMinutes(5),
+            'startDate' => now()->subMinutes(5),
         ]);
 
         if ($verification) {

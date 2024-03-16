@@ -26,9 +26,9 @@ class VerificationFilter extends ModelFilter
     }
 
     /**
-     * Filter with a given date.
+     * Filter with a given start date.
      */
-    public function fromCreatedAt(CarbonInterface $date): static
+    public function startDate(CarbonInterface $date): static
     {
         return $this->where('created_at', '>=', $date);
     }

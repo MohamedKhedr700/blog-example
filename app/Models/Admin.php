@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Filters\AdminFilter;
 use App\Traits\Models\WithJwt;
 use Database\Factories\AdminFactory;
-use Filament\Panel;
+use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -13,6 +14,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class Admin extends Authenticatable implements JWTSubject
 {
+    use Filterable;
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
@@ -50,10 +52,10 @@ class Admin extends Authenticatable implements JWTSubject
     }
 
     /**
-     * Determine if admin can access to panel.
+     * Define model filter.
      */
-    public function canAccessPanel(Panel $panel): bool
+    public function modelFilter(): ?string
     {
-        return true;
+        return $this->provideFilter(AdminFilter::class);
     }
 }

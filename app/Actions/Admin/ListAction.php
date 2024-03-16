@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Actions\Post;
+namespace App\Actions\Admin;
 
 use App\Actions\Core\ListAction as CoreListAction;
-use App\Models\Post;
+use App\Models\Admin;
 
 class ListAction extends CoreListAction
 {
@@ -12,7 +12,7 @@ class ListAction extends CoreListAction
      */
     protected function index(array $filters = [], array $columns = ['*'], array $relations = [])
     {
-        return Post::filter($filters)
+        return Admin::filter($filters)
             ->select($columns)
             ->with($relations);
     }

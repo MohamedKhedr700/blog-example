@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Jobs\SendVerification;
+use App\Jobs\SendVerificationJob;
 use App\Models\Verification;
 
 class VerificationObserver
@@ -20,6 +20,6 @@ class VerificationObserver
      */
     public function created(Verification $verification): void
     {
-        SendVerification::dispatch($verification);
+        SendVerificationJob::dispatch($verification);
     }
 }

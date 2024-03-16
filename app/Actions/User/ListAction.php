@@ -2,20 +2,18 @@
 
 namespace App\Actions\User;
 
-use App\Actions\Core\Action;
+use App\Actions\Core\ListAction as CoreListAction;
 use App\Models\User;
-use Illuminate\Support\Collection;
 
-class ListAction extends Action
+class ListAction extends CoreListAction
 {
     /**
-     * Execute the action.
+     * Index resources.
      */
-    public function execute(array $columns = ['*'], array $relations = []): Collection
+    protected function index(array $filters = [], array $columns = ['*'], array $relations = [])
     {
-        return User::query()
+        return User::filter($filters)
             ->select($columns)
-            ->with($relations)
-            ->get();
+            ->with($relations);
     }
 }
