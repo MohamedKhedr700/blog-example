@@ -30,15 +30,15 @@ class TwilioProvider implements SmsProvider
     public function send(string $phone, string $message): void
     {
         try {
-            $client = new Client(
-                $this->settings('sid'),
-                $this->settings('token'),
-            );
-
-            $client->messages->create($phone, [
-                'from' => $this->settings('from'),
-                'body' => $message,
-            ]);
+//            $client = new Client(
+//                $this->settings('sid'),
+//                $this->settings('token'),
+//            );
+//
+//            $client->messages->create($phone, [
+//                'from' => $this->settings('from'),
+//                'body' => $message,
+//            ]);
 
         } catch (Exception $e) {
             Log::info($e->getMessage());
