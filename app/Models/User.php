@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Filters\UserFilter;
 use App\Traits\Models\WithJwt;
 use Database\Factories\UserFactory;
