@@ -18,9 +18,8 @@ readonly class VerifyAction
      */
     public function execute(array $filters): bool
     {
-        return $this->updateByAction->execute(
-            $filters,
-            ['verified_at' => now()],
-        );
+        return $this->updateByAction->execute($filters, [
+            'verified_at' => now(),
+        ]);
     }
 }
