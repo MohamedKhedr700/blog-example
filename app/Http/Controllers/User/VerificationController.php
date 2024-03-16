@@ -14,7 +14,7 @@ class VerificationController extends Controller
      */
     public function __invoke(VerificationRequest $request, VerifyAction $action): JsonResponse
     {
-        $action->execute($request->input('phone'));
+        $action->execute($request->only('phone'));
 
         return response()->json([
             'message' => __('success'),

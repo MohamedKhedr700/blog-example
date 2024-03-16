@@ -16,10 +16,10 @@ readonly class VerifyAction
     /**
      * Handle the action.
      */
-    public function execute(string $phone): bool
+    public function execute(array $filters): bool
     {
         return $this->updateByAction->execute(
-            ['phone' => $phone],
+            $filters,
             ['verified_at' => now()],
         );
     }

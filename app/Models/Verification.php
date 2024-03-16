@@ -18,9 +18,17 @@ class Verification extends Model
     /**
      * {@inheritdoc}
      */
-    protected $fillable = [
-        'code',
-    ];
+    protected $fillable = [];
+
+    /**
+     * Get verification message.
+     */
+    public function getMessage(): string
+    {
+        return __('message.verification_message', [
+            'code' => $this->attributes['code'],
+        ]);
+    }
 
     /**
      * Get the parent verifiable model.

@@ -3,7 +3,7 @@
 namespace App\Actions\User;
 
 use App\Actions\Core\Action;
-use App\Jobs\SendPhoneVerification;
+use App\Jobs\SendVerification;
 use App\Models\User;
 
 class SendVerificationAction extends Action
@@ -13,6 +13,6 @@ class SendVerificationAction extends Action
      */
     public function execute(User $user): void
     {
-        dispatch(new SendPhoneVerification($user));
+        $user->verification()->create();
     }
 }
