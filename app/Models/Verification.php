@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-use App\Filters\UserFilter;
 use App\Filters\VerificationFilter;
 use EloquentFilter\Filterable;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 

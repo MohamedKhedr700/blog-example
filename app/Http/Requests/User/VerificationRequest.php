@@ -2,8 +2,7 @@
 
 namespace App\Http\Requests\User;
 
-use App\Actions\User\FindByAction;
-use App\Models\Verification;
+use App\Actions\Verification;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Validator;
@@ -42,11 +41,11 @@ class VerificationRequest extends FormRequest
      */
     protected function validateVerificationCode(Validator $validator): void
     {
-        $verification = Verification::filter([
+        $verification = Verification\FindByAction::exec([
             'code' => $this->input('code'),
             'phone' => $this->input('phone'),
             'fromCreatedAt' => now()->subMinutes(5),
-        ])->first();
+        ]);
 
         if ($verification) {
             return;

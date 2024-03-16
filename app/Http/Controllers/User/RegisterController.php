@@ -17,7 +17,7 @@ class RegisterController extends Controller
         $action->execute($request->validated());
 
         return response()->json([
-            'message' => __('success'),
+            'message' => __('message.success'),
         ]);
     }
 }

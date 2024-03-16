@@ -17,7 +17,7 @@ class VerificationController extends Controller
         $action->execute($request->only('phone'));
 
         return response()->json([
-            'message' => __('success'),
+            'message' => __('message.success'),
         ]);
     }
 }

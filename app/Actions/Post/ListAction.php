@@ -17,6 +17,5 @@ class ListAction extends Action
             ->select($columns)
             ->with($relations)
             ->get();
-
     }
 }

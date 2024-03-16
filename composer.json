@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-http": "*",
         "deoliveiralucas/array-keys-case-transform": "^1.1",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
@@ -14,6 +15,7 @@
         "laravel/tinker": "^2.8",
         "spatie/laravel-fractal": "^6.1",
         "tucker-eric/eloquentfilter": "^3.3",
+        "twilio/sdk": "^7.16",
         "tymon/jwt-auth": "^2.0"
     },
     "require-dev": {

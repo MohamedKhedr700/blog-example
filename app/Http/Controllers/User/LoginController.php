@@ -21,7 +21,7 @@ class LoginController extends Controller
         $token = $action->execute($request->validated());
 
         return response()->json([
-            'message' => __('success'),
+            'message' => __('message.success'),
             'token' => $token,
             'user' => fractal_data(auth()->user(), new UserTransformer),
         ]);

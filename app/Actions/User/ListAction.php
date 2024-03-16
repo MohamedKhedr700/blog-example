@@ -11,10 +11,11 @@ class ListAction extends Action
     /**
      * Execute the action.
      */
-    public function execute(array $columns = ['*']): Collection
+    public function execute(array $columns = ['*'], array $relations = []): Collection
     {
         return User::query()
             ->select($columns)
+            ->with($relations)
             ->get();
     }
 }

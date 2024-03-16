@@ -19,7 +19,7 @@ class CrudController extends Controller
         $action->execute($request->validated());
 
         return response()->json([
-            'message' => __('success'),
+            'message' => __('message.success'),
         ]);
     }
 
@@ -34,7 +34,7 @@ class CrudController extends Controller
         );
 
         return response()->json([
-            'message' => __('success'),
+            'message' => __('message.success'),
             'resources' => fractal_data($posts, new PostTransformer),
         ]);
     }

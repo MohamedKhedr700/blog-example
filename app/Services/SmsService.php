@@ -2,21 +2,33 @@
 
 namespace App\Services;
 
-class SmsService
+use App\Services\Contracts\SmsProvider;
+use App\Services\Contracts\SmsService as SmsServiceInterface;
+
+readonly class SmsService implements SmsServiceInterface
 {
     /**
-     * Get a new sms service instance.
+     * Creat a new sms service instance.
      */
-    public static function new(): static
-    {
-        return new static();
+    public function __construct(
+        private SmsProvider $smsProvider,
+    ) {
+
     }
 
     /**
-     * Send an sms message to a given number.
+     * {@inheritDoc}
      */
-    public function send(string $phone, string $message)
+    public static function new(): static
     {
+        return app(static::class);
+    }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function send(string $phone, string $message): void
+    {
+        $this->smsProvider->send($phone, $message);
     }
 }

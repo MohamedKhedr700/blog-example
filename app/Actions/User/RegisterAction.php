@@ -4,13 +4,13 @@ namespace App\Actions\User;
 
 use App\Models\User;
 
-class RegisterAction
+readonly class RegisterAction
 {
     /**
      * Crate a new action instance.
      */
     public function __construct(
-        private readonly SendVerificationAction $sendVerificationAction,
+        private SendVerificationAction $sendVerificationAction,
     ) {
 
     }
