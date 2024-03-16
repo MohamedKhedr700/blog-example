@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Verification extends Model
 {
-    use HasFactory;
-
     /**
      * {@inheritdoc}
      */
@@ -21,7 +19,7 @@ class Verification extends Model
     protected $fillable = [];
 
     /**
-     * Get verification message.
+     * Get a verification message.
      */
     public function getMessage(): string
     {
