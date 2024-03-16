@@ -3,10 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Filters\UserFilter;
 use App\Traits\Models\WithJwt;
 use Database\Factories\UserFactory;
+use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -18,6 +21,7 @@ class User extends Authenticatable implements JWTSubject
     use HasFactory;
     use Notifiable;
     use WithJwt;
+    use Filterable;
 
     /**
      * The attributes that are mass assignable.
@@ -52,10 +56,26 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * Define model filter.
+     */
+    public function modelFilter(): ?string
+    {
+        return $this->provideFilter(UserFilter::class);
+    }
+
+    /**
      * Get posts that belong to a user.
      */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    /**
+     * Get the user verification.
+     */
+    public function verification(): MorphOne
+    {
+        return $this->morphOne(Verification::class, 'verifiable');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Transformers;
+namespace App\Http\Transformers\Post;
 
 use App\Models\Post;
 use League\Fractal\Resource\Item;

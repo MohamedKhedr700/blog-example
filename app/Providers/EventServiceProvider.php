@@ -14,11 +14,7 @@ class EventServiceProvider extends ServiceProvider
     /**
      * The event to listener mappings for the application.
      */
-    protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
-    ];
+    protected $listen = [];
 
     /**
      * Register any events for your application.
@@ -26,13 +22,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Post::observe(PostObserver::class);
-    }
-
-    /**
-     * Determine if events and listeners should be automatically discovered.
-     */
-    public function shouldDiscoverEvents(): bool
-    {
-        return false;
     }
 }

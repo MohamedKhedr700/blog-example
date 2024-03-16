@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Actions\User\VerifyAction;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\User\VerifyRequest;
+use App\Http\Requests\User\VerificationRequest;
 use Illuminate\Http\JsonResponse;
 
 class VerificationController extends Controller
@@ -12,12 +12,9 @@ class VerificationController extends Controller
     /**
      * Invoke a controller method.
      */
-    public function __invoke(VerifyRequest $request, VerifyAction $action): JsonResponse
+    public function __invoke(VerificationRequest $request, VerifyAction $action): JsonResponse
     {
-        $action->execute(
-            $request->input('phone'),
-            $request->input('code'),
-        );
+        $action->execute($request->input('phone'));
 
         return response()->json([
             'message' => __('success'),

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Helpers\LoginAction;
+use App\Actions\User\LoginAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\LoginRequest;
-use App\Http\Transformers\UserTransformer;
+use App\Http\Transformers\User\UserTransformer;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
 

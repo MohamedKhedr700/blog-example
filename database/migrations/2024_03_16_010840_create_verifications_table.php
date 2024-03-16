@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('verifications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->string('title');
-            $table->text('description');
-            $table->string('phone');
-            $table->timestamps();
+            $table->string('verifiable_type');
+            $table->foreignId('verifiable_id');
+            $table->string('code');
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('verifications');
     }
 };

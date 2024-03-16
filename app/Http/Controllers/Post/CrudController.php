@@ -6,7 +6,7 @@ use App\Actions\Post\CreateAction;
 use App\Actions\Post\ListAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreRequest;
-use App\Http\Transformers\PostTransformer;
+use App\Http\Transformers\Post\PostTransformer;
 use Illuminate\Http\JsonResponse;
 
 class CrudController extends Controller
@@ -28,7 +28,10 @@ class CrudController extends Controller
      */
     public function index(ListAction $action): JsonResponse
     {
-        $posts = $action->execute(['*'], ['user']);
+        $posts = $action->execute(
+            ['*'],
+            ['user:id,username'],
+        );
 
         return response()->json([
             'message' => __('success'),
