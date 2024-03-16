@@ -12,9 +12,9 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string'],
-            'description' => ['required', 'string'],
-            'phone' => ['required', 'string'],
+            'title' => ['required', 'string', 'min:3', 'max:255'],
+            'description' => ['required', 'string', 'min:3', 'max:512'],
+            'phone' => ['required', 'string', 'size:12'],
         ];
     }
 }

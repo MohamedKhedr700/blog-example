@@ -16,10 +16,7 @@ class ProfileController extends Controller
     {
         return response()->json([
             'message' => __('success'),
-            'user' => fractal_data(
-                $action->execute(),
-                new UserTransformer,
-            ),
+            'user' => fractal_data($action->execute(), new UserTransformer),
         ]);
     }
 }

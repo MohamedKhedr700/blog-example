@@ -23,10 +23,7 @@ class LoginController extends Controller
         return response()->json([
             'message' => __('success'),
             'token' => $token,
-            'user' => fractal_data(
-                auth()->user(),
-                new UserTransformer,
-            ),
+            'user' => fractal_data(auth()->user(), new UserTransformer),
         ]);
     }
 }

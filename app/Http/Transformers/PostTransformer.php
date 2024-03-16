@@ -3,7 +3,7 @@
 namespace App\Http\Transformers;
 
 use App\Models\Post;
-use League\Fractal\Resource\Primitive;
+use League\Fractal\Resource\Item;
 use League\Fractal\TransformerAbstract;
 
 class PostTransformer extends TransformerAbstract
@@ -24,19 +24,14 @@ class PostTransformer extends TransformerAbstract
             'id' => $post->getAttribute('id'),
             'title' => $post->getAttribute('title'),
             'description' => $post->getAttribute('description'),
-            'phone' => $post->getAttribute('phone'),
         ];
     }
 
     /**
      * Include a post user.
      */
-    protected function includeUser(Post $post): Primitive
+    protected function includeUser(Post $post): Item
     {
-        return $this->primitive($post->user, function ($item) {
-            return [
-                'id' => $item->id,
-            ];
-        });
+        return $this->item($post->user, new UserTransformer);
     }
 }
