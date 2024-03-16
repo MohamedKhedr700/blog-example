@@ -19,6 +19,10 @@ class LoginAction
             throw new AuthenticationException(__('auth.failed'));
         }
 
+        if (! auth()->user()->isVerified()) {
+            throw new AuthenticationException(__('auth.not_verified'));
+        }
+
         return $token;
     }
 }

@@ -64,6 +64,14 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * Determine if a user is verified.
+     */
+    public function isVerified(): bool
+    {
+        return (bool) $this->getAttribute('verified_at');
+    }
+
+    /**
      * Get posts that belong to a user.
      */
     public function posts(): HasMany
