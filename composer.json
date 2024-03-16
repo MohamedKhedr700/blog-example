@@ -6,12 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "ext-http": "*",
         "deoliveiralucas/array-keys-case-transform": "^1.1",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
+        "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8",
         "spatie/laravel-fractal": "^6.1",
         "tucker-eric/eloquentfilter": "^3.3",

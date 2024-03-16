@@ -32,7 +32,10 @@ class SendVerification implements ShouldQueue
     public function handle(): void
     {
         SmsService::new()->send(
-            $this->verification->verifiable->getAttribute('phone'),
+            $this->verification->verifiable()
+                ->select('phone')
+                ->first()
+                ->getAttribute('phone'),
             $this->verification->getMessage(),
         );
     }
