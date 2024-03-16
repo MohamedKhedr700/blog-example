@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Models\User;
 use App\Models\Verification;
 use App\Services\SmsService;
 use Illuminate\Bus\Queueable;

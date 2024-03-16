@@ -3,7 +3,6 @@
 namespace App\Actions\User;
 
 use App\Actions\Core\Action;
-use App\Jobs\SendVerification;
 use App\Models\User;
 
 class SendVerificationAction extends Action
