@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
+use App\Filters\UserFilter;
+use App\Filters\VerificationFilter;
+use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Verification extends Model
 {
+    use Filterable;
+
     /**
      * {@inheritdoc}
      */
@@ -16,6 +22,14 @@ class Verification extends Model
      * {@inheritdoc}
      */
     protected $fillable = [];
+
+    /**
+     * Define model filter.
+     */
+    public function modelFilter(): ?string
+    {
+        return $this->provideFilter(VerificationFilter::class);
+    }
 
     /**
      * Get a verification message.

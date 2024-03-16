@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User;
 
 use App\Actions\User\FindByAction;
+use App\Models\Verification;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Validator;
@@ -41,13 +42,13 @@ class VerificationRequest extends FormRequest
      */
     protected function validateVerificationCode(Validator $validator): void
     {
-        $user = FindByAction::exec(
-            ['phone' => $this->input('phone')],
-            ['id'],
-            ['verification'],
-        );
+        $verification = Verification::filter([
+            'code' => $this->input('code'),
+            'phone' => $this->input('phone'),
+            'fromCreatedAt' => now()->subMinutes(5),
+        ])->first();
 
-        if ($user->verification->code === $this->input('code')) {
+        if ($verification) {
             return;
         }
 
