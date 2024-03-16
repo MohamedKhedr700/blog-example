@@ -17,11 +17,11 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
+    use Filterable;
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
     use WithJwt;
-    use Filterable;
 
     /**
      * The attributes that are mass assignable.

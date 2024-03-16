@@ -3,7 +3,6 @@
 namespace App\Actions\User;
 
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
 
 class RegisterAction
 {

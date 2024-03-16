@@ -4,7 +4,6 @@ namespace App\Actions\User;
 
 use App\Actions\Core\Action;
 use App\Models\User;
-use Illuminate\Support\Collection;
 
 class UpdateByAction extends Action
 {

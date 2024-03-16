@@ -2,9 +2,6 @@
 
 namespace App\Actions\User;
 
-use App\Models\User;
-use Exception;
-
 readonly class VerifyAction
 {
     /**
