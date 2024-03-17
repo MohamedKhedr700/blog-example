@@ -12,6 +12,8 @@ class InstallAction extends Action
      */
     public function execute(): void
     {
+        Artisan::call('key:generate');
+        Artisan::call('jwt:secret --force');
         Artisan::call('migrate:fresh');
         Artisan::call('db:seed');
     }

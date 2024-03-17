@@ -14,7 +14,7 @@ class Verification extends Model
     /**
      * {@inheritdoc}
      */
-    public $timestamps = false;
+    const UPDATED_AT = null;
 
     /**
      * {@inheritdoc}

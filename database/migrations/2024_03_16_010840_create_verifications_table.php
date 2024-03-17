@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('verifiable_type');
             $table->foreignId('verifiable_id');
             $table->string('code');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('created_at');
         });
     }
 
