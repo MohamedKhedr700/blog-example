@@ -14,7 +14,6 @@ class Post extends Model
 {
     use Filterable;
     use HasFactory;
-    use HasLimitChars;
 
     /**
      * The attributes that are mass assignable.
