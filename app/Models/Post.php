@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Filters\PostFilter;
-use App\Traits\Models\HasLimitChars;
 use Database\Factories\PostFactory;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

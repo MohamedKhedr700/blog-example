@@ -34,7 +34,7 @@ class PostTransformer extends TransformerAbstract
     {
         if (! isset($post->user)) {
             return null;
-        };
+        }
 
         return $this->item($post->user, new UserTransformer);
     }
