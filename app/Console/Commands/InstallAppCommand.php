@@ -5,12 +5,12 @@ namespace App\Console\Commands;
 use App\Actions\App\InstallAction;
 use Illuminate\Console\Command;
 
-class InstallProjectCommand extends Command
+class InstallAppCommand extends Command
 {
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'install:app';
+    protected $signature = 'app:install';
 
     /**
      * The console command description.

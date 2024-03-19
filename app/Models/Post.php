@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Filters\PostFilter;
+use App\Traits\Models\HasLimitChars;
 use Database\Factories\PostFactory;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,6 +14,7 @@ class Post extends Model
 {
     use Filterable;
     use HasFactory;
+    use HasLimitChars;
 
     /**
      * The attributes that are mass assignable.

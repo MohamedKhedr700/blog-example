@@ -30,8 +30,12 @@ class PostTransformer extends TransformerAbstract
     /**
      * Include a post user.
      */
-    protected function includeUser(Post $post): Item
+    protected function includeUser(Post $post): ?Item
     {
+        if (! isset($post->user)) {
+            return null;
+        };
+
         return $this->item($post->user, new UserTransformer);
     }
 }

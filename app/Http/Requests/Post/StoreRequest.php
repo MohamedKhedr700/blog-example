@@ -13,7 +13,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'min:3', 'max:255'],
-            'description' => ['required', 'string', 'min:3', 'max:512'],
+            'description' => ['required', 'string', 'min:3', 'max:65535'],
             'phone' => ['required', 'string', 'regex:/^(\+201)[0-2,5][0-9]{8}$/'],
         ];
     }

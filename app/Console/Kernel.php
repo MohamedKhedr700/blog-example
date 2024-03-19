@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\GenerateReportCommand::class,
-        Commands\InstallProjectCommand::class,
+        Commands\InstallAppCommand::class,
     ];
 
     /**
