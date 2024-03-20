@@ -27,12 +27,8 @@ class CrudController extends Controller
      */
     public function index(ListRequest $request, ListAction $action): JsonResponse
     {
-        $filter = array_merge($request->validated(), [
-            'descriptionLimit' => 1,
-        ]);
-
         $posts = $action->execute(
-            $filter,
+            $request->validated(),
             ['*'],
             ['user:id,username'],
         );

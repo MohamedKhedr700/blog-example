@@ -23,7 +23,7 @@ class PostTransformer extends TransformerAbstract
         return [
             'id' => $post->getAttribute('id'),
             'title' => $post->getAttribute('title'),
-            'description' => $post->getAttribute('description'),
+            'description' => substr($post->getAttribute('description'), 0, 512),
         ];
     }
 
