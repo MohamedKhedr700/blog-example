@@ -27,13 +27,16 @@ cp .env.example .env
 ./vendor/bin/sail artisan app:install
 ```
 
-The project is now up and running on `http://localhost/`
+The project is now up and running on 
+**[http://localhost/](http://localhost/)**.
 
-You can use admin dashboard on `http://localhost/admin/`
+You can use admin dashboard on
+**[http://localhost/admin/](http://localhost/admin/)**.
+
 with these credentials
 
-```
-admin@blog.net
+`email: admin@blog.net`
 
-password
-```
+`password: password`
+
+`ps:` You will find a Postman collection and Telescope entries in the `attachments` directory in the project.

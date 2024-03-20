@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "f6ae6ce8-3c7b-4cc6-aff3-f02f4a73b02a",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14568049"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Post Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "post title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "post description",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+201558812335",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Store Successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "post title",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "post description",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "+201558812335",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/posts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.15"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:18:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"message.success\",\n    \"debug\": {\n        \"database\": {\n            \"total\": 2,\n            \"items\": [\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `users` where `id` = '3' limit 1;\",\n                    \"time\": 2.02\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"insert into `posts` (`title`, `description`, `phone`, `user_id`, `updated_at`, `created_at`) values ('post title', 'post description', '+201558812335', '3', '2024-03-20 14:18:24', '2024-03-20 14:18:24');\",\n                    \"time\": 4.48\n                }\n            ]\n        },\n        \"cache\": {\n            \"hit\": {\n                \"keys\": [\n                    \"d2bfa8e8b749d2772a21edee7b70a2b3\",\n                    \"d2bfa8e8b749d2772a21edee7b70a2b3\"\n                ],\n                \"total\": 2\n            },\n            \"miss\": {\n                \"keys\": [\n                    \"telescope:dump-watcher\",\n                    \"telescope:pause-recording\",\n                    \"ipAOWVotqUhrgU2t\",\n                    \"ipAOWVotqUhrgU2t\"\n                ],\n                \"total\": 4\n            },\n            \"write\": {\n                \"keys\": [],\n                \"total\": 0\n            },\n            \"forget\": {\n                \"keys\": [],\n                \"total\": 0\n            }\n        },\n        \"profiling\": [\n            {\n                \"event\": \"request-time\",\n                \"time\": 0.05845379829406738\n            }\n        ],\n        \"memory\": {\n            \"usage\": 2133432,\n            \"peak\": 2175040\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post List Successfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/posts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "perPage",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.15"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:18:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"resources\": [\n        {\n            \"id\": 1,\n            \"title\": \"Mr.\",\n            \"description\": \"Perspiciatis debitis numquam eveniet hic dolores. Dolorum sit incidunt reiciendis et modi laborum. Rerum architecto fugiat exercitationem corrupti non omnis amet.\",\n            \"user\": {\n                \"id\": 2,\n                \"username\": \"Cade Hauck II\"\n            }\n        }\n    ],\n    \"debug\": {\n        \"database\": {\n            \"total\": 3,\n            \"items\": [\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `users` where `id` = '3' limit 1;\",\n                    \"time\": 1.94\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `posts`;\",\n                    \"time\": 0.53\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select `id`, `username` from `users` where `users`.`id` in (2);\",\n                    \"time\": 0.52\n                }\n            ]\n        },\n        \"cache\": {\n            \"hit\": {\n                \"keys\": [\n                    \"d2bfa8e8b749d2772a21edee7b70a2b3\",\n                    \"d2bfa8e8b749d2772a21edee7b70a2b3\"\n                ],\n                \"total\": 2\n            },\n            \"miss\": {\n                \"keys\": [\n                    \"telescope:dump-watcher\",\n                    \"telescope:pause-recording\",\n                    \"ipAOWVotqUhrgU2t\",\n                    \"ipAOWVotqUhrgU2t\"\n                ],\n                \"total\": 4\n            },\n            \"write\": {\n                \"keys\": [],\n                \"total\": 0\n            },\n            \"forget\": {\n                \"keys\": [],\n                \"total\": 0\n            }\n        },\n        \"profiling\": [\n            {\n                \"event\": \"request-time\",\n                \"time\": 0.08714103698730469\n            }\n        ],\n        \"memory\": {\n            \"usage\": 2163976,\n            \"peak\": 2243640\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+201558812335",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@blog.net",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Register Successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "+201558812335",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "user@blog.net",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.15"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:15:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"message.success\",\n    \"debug\": {\n        \"database\": {\n            \"total\": 7,\n            \"items\": [\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select count(*) as aggregate from `users` where `phone` = '+201558812335';\",\n                    \"time\": 4.5\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select count(*) as aggregate from `users` where `email` = 'user@blog.net';\",\n                    \"time\": 1.11\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"insert into `users` (`username`, `phone`, `email`, `password`, `updated_at`, `created_at`) values ('user', '+201558812335', 'user@blog.net', '$2y$12$Z4oQL0a/nb7zQank.9fPq.lvI6Vk.IgT3mcctC1Qoer1HCG4mQDTK', '2024-03-20 14:15:34', '2024-03-20 14:15:34');\",\n                    \"time\": 6.63\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"insert into `verifications` (`verifiable_id`, `verifiable_type`, `code`, `created_at`) values ('3', 'App\\\\Models\\\\User', '3566', '2024-03-20 14:15:34');\",\n                    \"time\": 8.56\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `verifications` where `verifications`.`id` = '1' limit 1;\",\n                    \"time\": 0.97\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select `phone` from `users` where `users`.`id` = '3' limit 1;\",\n                    \"time\": 0.58\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `verifications` where `verifications`.`id` = '1' limit 1;\",\n                    \"time\": 0.85\n                }\n            ]\n        },\n        \"cache\": {\n            \"hit\": {\n                \"keys\": [\n                    \"6e49a48b7049b5d2a11287848435e0b8\"\n                ],\n                \"total\": 1\n            },\n            \"miss\": {\n                \"keys\": [\n                    \"telescope:dump-watcher\",\n                    \"telescope:pause-recording\",\n                    \"6e49a48b7049b5d2a11287848435e0b8\"\n                ],\n                \"total\": 3\n            },\n            \"write\": {\n                \"keys\": [],\n                \"total\": 0\n            },\n            \"forget\": {\n                \"keys\": [],\n                \"total\": 0\n            }\n        },\n        \"profiling\": [\n            {\n                \"event\": \"request-time\",\n                \"time\": 1.3109591007232666\n            }\n        ],\n        \"memory\": {\n            \"usage\": 9314432,\n            \"peak\": 9619160\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User Verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "+201558812335",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "3566",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/verify",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"verify"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Verify Successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "phone",
+											"value": "+201558812335",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "3566",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/verify",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"verify"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.15"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:17:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"message.success\",\n    \"debug\": {\n        \"database\": {\n            \"total\": 5,\n            \"items\": [\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select count(*) as aggregate from `users` where `phone` = '+201558812335';\",\n                    \"time\": 2.56\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select count(*) as aggregate from `users` where `phone` = '+201558812335';\",\n                    \"time\": 0.42\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select distinct `verifiable_type` from `verifications`;\",\n                    \"time\": 0.86\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `verifications` where `code` = '3566' and ((`verifications`.`verifiable_type` = 'App\\\\Models\\\\User' and exists (select * from `users` where `verifications`.`verifiable_id` = `users`.`id` and `phone` = '+201558812335'))) and `created_at` >= '2024-03-20 14:12:27' limit 1;\",\n                    \"time\": 0.75\n                },\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"update `users` set `verified_at` = '2024-03-20 14:17:27', `users`.`updated_at` = '2024-03-20 14:17:27' where `phone` = '+201558812335';\",\n                    \"time\": 15.93\n                }\n            ]\n        },\n        \"cache\": {\n            \"hit\": {\n                \"keys\": [\n                    \"6e49a48b7049b5d2a11287848435e0b8\"\n                ],\n                \"total\": 1\n            },\n            \"miss\": {\n                \"keys\": [\n                    \"telescope:dump-watcher\",\n                    \"telescope:pause-recording\",\n                    \"6e49a48b7049b5d2a11287848435e0b8\"\n                ],\n                \"total\": 3\n            },\n            \"write\": {\n                \"keys\": [],\n                \"total\": 0\n            },\n            \"forget\": {\n                \"keys\": [],\n                \"total\": 0\n            }\n        },\n        \"profiling\": [\n            {\n                \"event\": \"request-time\",\n                \"time\": 0.07795095443725586\n            }\n        ],\n        \"memory\": {\n            \"usage\": 2143968,\n            \"peak\": 2318656\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (typeof pm.globals.get('raid') != 'undefined') {",
+									"    var res = pm.response.json();",
+									"",
+									"    var token = res.token;",
+									"",
+									"    if (token) {",
+									"        pm.environment.set('access_token', token)",
+									"        pm.environment.set('access_token_user', token)",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "+201558812335",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Login Successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "phone",
+											"value": "+201558812335",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.15"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:17:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"message.success\",\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS92MS91c2Vycy9sb2dpbiIsImlhdCI6MTcxMDkzNzA3MiwiZXhwIjoxNzEwOTQwNjcyLCJuYmYiOjE3MTA5MzcwNzIsImp0aSI6ImlwQU9XVm90cVVocmdVMnQiLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.ftafi751Yw0Fb2YswFFwvpcHeKlDqIPUHnbcto-tLk4\",\n    \"user\": {\n        \"id\": 3,\n        \"username\": \"user\",\n        \"phone\": \"+201558812335\",\n        \"email\": \"user@blog.net\"\n    },\n    \"debug\": {\n        \"database\": {\n            \"total\": 1,\n            \"items\": [\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `users` where `phone` = '+201558812335' limit 1;\",\n                    \"time\": 2.67\n                }\n            ]\n        },\n        \"cache\": {\n            \"hit\": {\n                \"keys\": [\n                    \"6e49a48b7049b5d2a11287848435e0b8\",\n                    \"6e49a48b7049b5d2a11287848435e0b8\"\n                ],\n                \"total\": 2\n            },\n            \"miss\": {\n                \"keys\": [\n                    \"telescope:dump-watcher\",\n                    \"telescope:pause-recording\"\n                ],\n                \"total\": 2\n            },\n            \"write\": {\n                \"keys\": [],\n                \"total\": 0\n            },\n            \"forget\": {\n                \"keys\": [],\n                \"total\": 0\n            }\n        },\n        \"profiling\": [\n            {\n                \"event\": \"request-time\",\n                \"time\": 0.39250802993774414\n            }\n        ],\n        \"memory\": {\n            \"usage\": 2252400,\n            \"peak\": 2448904\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/users/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Profile Successfully",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/users/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.15"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Mar 2024 12:18:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"resource\": {\n        \"id\": 3,\n        \"username\": \"user\",\n        \"phone\": \"+201558812335\",\n        \"email\": \"user@blog.net\"\n    },\n    \"debug\": {\n        \"database\": {\n            \"total\": 1,\n            \"items\": [\n                {\n                    \"connection\": \"mysql\",\n                    \"query\": \"select * from `users` where `id` = '3' limit 1;\",\n                    \"time\": 2.36\n                }\n            ]\n        },\n        \"cache\": {\n            \"hit\": {\n                \"keys\": [\n                    \"d2bfa8e8b749d2772a21edee7b70a2b3\"\n                ],\n                \"total\": 1\n            },\n            \"miss\": {\n                \"keys\": [\n                    \"telescope:dump-watcher\",\n                    \"telescope:pause-recording\",\n                    \"ipAOWVotqUhrgU2t\",\n                    \"ipAOWVotqUhrgU2t\",\n                    \"d2bfa8e8b749d2772a21edee7b70a2b3\"\n                ],\n                \"total\": 5\n            },\n            \"write\": {\n                \"keys\": [],\n                \"total\": 0\n            },\n            \"forget\": {\n                \"keys\": [],\n                \"total\": 0\n            }\n        },\n        \"profiling\": [\n            {\n                \"event\": \"request-time\",\n                \"time\": 0.0782308578491211\n            }\n        ],\n        \"memory\": {\n            \"usage\": 2128432,\n            \"peak\": 2193608\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.headers.add( { key: 'Accept', value: \"application/json\" } );",
+					"    ",
+					"pm.request.headers.add({",
+					"     key: 'Authorization',",
+					"});   ",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
